@@ -1,6 +1,6 @@
 var $,tab,dataStr,layer;
 layui.config({
-	base : "js/"
+	base : baseLayuiUrl
 }).extend({
 	"bodyTab" : "bodyTab"
 })
@@ -11,13 +11,16 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
     	layer = parent.layer === undefined ? layui.layer : top.layer;
 		tab = layui.bodyTab({
 			openTabNum : "50",  //最大可打开窗口数量
-			url : "json/navs.json" //获取菜单json地址
+			url : "/admin/lettNav" //获取菜单json地址
 		});
 
 	//通过顶部菜单获取左侧二三级菜单   注：此处只做演示之用，实际开发中通过接口传参的方式获取导航数据
 	function getData(json){
 		$.getJSON(tab.tabConfig.url,function(data){
-			if(json == "contentManagement"){
+		    console.log(data);
+            dataStr = data
+            tab.render();
+			/*if(json == "contentManagement"){
 				dataStr = data.contentManagement;
 				//重新渲染左侧菜单
 				tab.render();
@@ -33,7 +36,7 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
                 dataStr = data.seraphApi;
                 //重新渲染左侧菜单
                 tab.render();
-            }
+            }*/
 		})
 	}
 	//页面加载时判断左侧菜单是否显示
@@ -157,7 +160,7 @@ function donation(){
 
 //图片管理弹窗
 function showImg(){
-    $.getJSON('json/images.json', function(json){
+    $.getJSON('/json/images.json', function(json){
         var res = json;
         layer.photos({
             photos: res,
