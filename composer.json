@@ -1,0 +1,29 @@
+{
+    "name": "zngue/laravel_user",
+    "description": "zngue 用户管理 角色管理 library 用户管理",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "zngue",
+            "email": "875407262@qq.com"
+        }
+    ],
+    "require": {
+        "laravel/framework": "^6.2",
+        "laravel/tinker": "^2.0",
+        "spatie/laravel-permission": "~3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zngue\\User\\": "src"
+        }
+    },
+    "extra": {
+        "laravel":{
+            "providers": [
+                "Zngue\\User\\UserService"
+            ]
+        }
+    }
+}
