@@ -10,3 +10,6 @@ php artisan zng:user
 ```
 php artisan serve
 ```
+
+## 赞助
+![支付宝](/assets/images/alipay.jpg)
