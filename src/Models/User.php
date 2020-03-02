@@ -25,6 +25,6 @@ use Spatie\Permission\Traits\HasRoles;
 class User extends BaseUser
 {
     use HasRoles;
-    protected $guard_name = 'web';
+    //protected $guard_name = 'web';
     protected $fillable=['name','email','phome','stauts','role_id','password','user_desc','is_super'];
 }

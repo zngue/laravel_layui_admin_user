@@ -153,7 +153,7 @@ class UserService
         if ($user->is_super) {
             return PermissionModel::where('status', 1)->get();
         } else {
-            return $user->getPermissionsViaRoles();
+            return $user->getPermissionsViaRoles()->where('status',1);
         }
     }
     public static function leftNavMenu(){

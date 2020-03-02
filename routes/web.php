@@ -5,6 +5,22 @@ use App\User;
 $namespace = "Zngue\User\Http\Controller";
 Route::namespace($namespace)->prefix('admin')->middleware(['web'])->group(function (){
     Route::get('/',function (){
+
+        /*\Zngue\User\Service\ModuleService::addFiled('user_info',[
+            'name'=>'username',
+            'name_alias'=>'性别',
+            'type'=>'string',
+            'nullable'=>false,
+            'default'=>'2',
+            'index'=>false,
+            'length'=>10,
+            ''
+        ]);die;*/
+
+        //echo \Zngue\User\Service\ModuleService::delFiled('user_info','sex');
+
+       // die;
+
         return redirect()->route('main.index');
     })->middleware('checkLogin');
 
@@ -14,7 +30,7 @@ Route::namespace($namespace)->prefix('admin')->middleware(['web'])->group(functi
         Route::post('loginOut',"Login@loginOut")->name('loginOut');
     });
     Route::get("lettNav",'Index@letfNav');
-    Route::middleware('checkLogin')->group(function (){
+    Route::middleware(['checkLogin','UserPermission'])->group(function (){
         Route::prefix('index')->name('main.')->group(function (){
             Route::get('index',"Index@index")->name('index');
             Route::get("home","Index@main")->name('home');
