@@ -12,4 +12,4 @@ php artisan serve
 ```
 
 ## 赞助
-![支付宝](assets/images/wxpy_sm.jpg)!![支付宝](assets/images/alipay.jpg)
+![支付宝](assets/images/wxpay.jpg)!![支付宝](assets/images/alipay.jpg)
