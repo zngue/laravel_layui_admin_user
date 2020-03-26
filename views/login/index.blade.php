@@ -3,7 +3,7 @@
 <html class="loginHtml">
 <head>
     <meta charset="utf-8">
-    <title>登录--layui后台管理模板 2.0</title>
+    <title>{{config("zng.system_name",'后台管理系统')}}</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -13,33 +13,55 @@
     <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="{{asset('zng/assets/layui/css/layui.css')}}" media="all" />
     <link rel="stylesheet" href="{{asset('zng/assets/css/public.css')}}" media="all" />
+    <link rel="stylesheet" href="{{asset('zng/assets/css/login.css')}}" media="all" />
+
 </head>
 <body class="loginBody">
-<form class="layui-form">
-    <div class="login_face"><img src="{{asset('zng/assets/images/face.jpg')}}" class="userAvatar"></div>
-    <div class="layui-form-item input-item">
-        <label for="userName">用户名</label>
-        <input type="text" name="name" placeholder="请输入用户名" autocomplete="off" id="userName" class="layui-input" lay-verify="required">
-        <input type="hidden" name="_token" value="{{csrf_token()}}">
+<style>
+    .layui-form{
+
+    }
+</style>
+<div class="main-title">
+    <div class="beg-login-box">
+        <header>
+            <h1>{{config('zng.system_name','后台管理系统')}}</h1>
+        </header>
+        <div class="beg-login-main">
+            <form class="layui-form layui-form-pane ">
+
+                <div class="layui-form-item">
+                    <label class="beg-login-icon fs1">
+                        用户名：
+                        <span class="icon icon-user"></span>
+                    </label>
+                    <input type="text" name="name" placeholder="请输入用户名"  id="userName" class="layui-input" lay-verify="required">
+                    <input type="hidden" name="_token" value="{{csrf_token()}}">
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="beg-login-icon fs1">
+                        密&nbsp;&nbsp;&nbsp;码：
+                        <i class="icon icon-key"></i>
+                    </label>
+                    <input type="password" name="password" placeholder="请输入密码" autocomplete="off" id="password" class="layui-input" lay-verify="required">
+                </div>
+                <div class="layui-form-item">
+                    <button class="layui-btn layui-block" lay-filter="login" lay-submit>登录</button>
+                </div>
+            </form>
+        </div>
+        <footer>
+            <p>{{config('zng.system_user','zngue')}} © </p>
+        </footer>
     </div>
-    <div class="layui-form-item input-item">
-        <label for="password">密码</label>
-        <input type="password" name="password" placeholder="请输入密码" autocomplete="off" id="password" class="layui-input" lay-verify="required">
-    </div>
-    <div class="layui-form-item input-item" id="imgCode">
-        <label for="code">验证码</label>
-        <input type="text" placeholder="请输入验证码" autocomplete="off" id="code" class="layui-input">
-        <img src="{{asset('zng/assets/images/code.jpg')}}">
-    </div>
-    <div class="layui-form-item">
-        <button class="layui-btn layui-block" lay-filter="login" lay-submit>登录</button>
-    </div>
-    <div class="layui-form-item layui-row">
-        <a href="javascript:;" class="seraph icon-qq layui-col-xs4 layui-col-sm4 layui-col-md4 layui-col-lg4"></a>
-        <a href="javascript:;" class="seraph icon-wechat layui-col-xs4 layui-col-sm4 layui-col-md4 layui-col-lg4"></a>
-        <a href="javascript:;" class="seraph icon-sina layui-col-xs4 layui-col-sm4 layui-col-md4 layui-col-lg4"></a>
-    </div>
-</form>
+</div>
+
+
+
+
+
+
 <script>
     var doLoginUrl = "{{route('login.doLogin')}}"
     var IndexUrl = "{{route('main.index')}}"

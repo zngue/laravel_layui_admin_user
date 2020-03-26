@@ -108,6 +108,9 @@ class UserService
     {
 //            print_r($data);die;
         $user = self::getOne($id);
+        if ($user->is_super==1){
+           return  $user->update($data);
+        }
         if ($user) {
             try {
                 DB::transaction(function () use ($id, $data, $user) {

@@ -12,5 +12,16 @@
     <link rel="icon" href="{{asset('favicon.ico')}}">
     <link rel="stylesheet" href="{{asset('zng/assets/layui/css/layui.css')}}" media="all" />
     <link rel="stylesheet" href="{{asset('zng/assets/css/public.css')}}" media="all" />
+    <script>
+        var ueditor_service_url="{{ config('filesystems.disks.image.service') }}"
+    </script>
+    <script src="{{asset('zng/assets/ueditor/ueditor.config.js')}}"></script>
+    <script src="{{asset('zng/assets/ueditor/ueditor.all.min.js')}}"></script>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+        var img_upload,file_upload,upload_num;
+    </script>
+
+
 </head>
 

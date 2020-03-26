@@ -2,6 +2,7 @@
 ```
 composer require zngue/laravel_layui_admin_user
 ```
+
 ## 发布命令
 ```
 php artisan zng:user
@@ -10,6 +11,8 @@ php artisan zng:user
 ```
 php artisan serve
 ```
+
+
 
 ## 赞助
 ![支付宝](assets/images/wxpy.jpg)![支付宝](assets/images/alipay.jpg)

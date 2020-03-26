@@ -30,11 +30,11 @@
             <tbody>
             <tr>
                 <td>当前版本</td>
-                <td class="version"></td>
+                <td class="version">{{config('zng.system_version')}}</td>
             </tr>
             <tr>
                 <td>开发作者</td>
-                <td class="author"></td>
+                <td class="author">{{config('zng.system_user')}}</td>
             </tr>
             <tr>
                 <td>网站首页</td>

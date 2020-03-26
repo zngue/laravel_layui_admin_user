@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>layui后台管理模板 2.0</title>
+    <title>{{config("zng.system_name",'后台管理系统')}}</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Access-Control-Allow-Origin" content="*">
@@ -23,7 +23,7 @@
     <!-- 顶部 -->
     <div class="layui-header header">
         <div class="layui-main mag0">
-            <a href="#" class="logo">layuiCMS 2.0</a>
+            <a href="#" class="logo">{{config("zng.system_name",'后台管理系统')}}</a>
             <!-- 显示/隐藏菜单 -->
             <a href="javascript:;" class="seraph hideMenu icon-caidan">
                 <i class="layui-icon layui-icon-shrink-right"></i>

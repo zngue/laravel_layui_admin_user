@@ -16,7 +16,7 @@ class UserCommands extends Command
 
     public function handle(){
         $this->call('vendor:publish', [ '--provider' => 'Spatie\Permission\PermissionServiceProvider'] );
-        $this->call("vendor:publish",['--provider'=>'Zngue\User\UserService']);
+        //$this->call("vendor:publish",['--provider'=>'Zngue\User\UserService']);
         $file = __DIR__.'/../../sql/users.sql';
         $data=array(
             'dbhost'=>config('database.connections.mysql.host'),

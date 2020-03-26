@@ -13,13 +13,15 @@ class PermissionService
     const CHANGE_STATUS_NAME=['status','is_menu'];
 
     public static function getList($keywords,$field,$order,$limit){
-        $list=PermissionModel::where(function ($q) use ($keywords){
+            $list=PermissionModel::where(function ($q) use ($keywords){
             if (!empty($keywords)){
                 $q->where('name','like','%'.$keywords.'%');
             }
         });
         if ($field && $order){
             $list->orderBy($field,$order);
+        }else{
+            $list->orderBy('id','desc');
         }
         return $list->paginate(ConstService::pageNum($limit));
     }

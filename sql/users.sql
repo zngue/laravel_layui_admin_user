@@ -151,4 +151,4 @@ CREATE TABLE `users` (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', 'zhangsan', null, '1', '超级管理员', '17', '1', null, null, '$2y$10$GdNcjMky6fIGd1AkWMmlOOca3S3hdLrQbS.c5OK6uyWqfiP83Xr0e', null, '2020-02-11 03:34:01', '2020-02-20 17:12:59');
+INSERT INTO `users` VALUES ('1', 'admin', null, '1', '超级管理员', '17', '1', null, null, '$2y$10$GdNcjMky6fIGd1AkWMmlOOca3S3hdLrQbS.c5OK6uyWqfiP83Xr0e', null, '2020-02-11 03:34:01', '2020-02-20 17:12:59');
