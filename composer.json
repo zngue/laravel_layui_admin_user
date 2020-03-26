@@ -10,8 +10,6 @@
         }
     ],
     "require": {
-        "laravel/framework": "^6.2",
-        "laravel/tinker": "^2.0",
         "spatie/laravel-permission": "~3.0"
     },
     "autoload": {
